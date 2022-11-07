@@ -1,6 +1,7 @@
 @import "./theme.scss";
 
 .post-info{
+  margin-top: $nav-height;
     position: absolute;
     z-index: 10000;
     top: 0;
