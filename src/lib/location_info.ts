@@ -16,7 +16,6 @@ async function getLocationInfo(locations: string[]) {
       if (locationResponse.status == 200) {
         let locationData: any = await locationResponse.json();
         locationInfo[locationData.standard.city] = { "latt": locationData.latt, "longt": locationData.longt }
-        console.log(locationInfo);
       }
     } catch (e: any) {
       console.error(e);

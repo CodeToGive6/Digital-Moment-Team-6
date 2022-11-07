@@ -14,13 +14,12 @@ export default function InDepthPostComponent(props: { post: PostWithComments, hi
       {
         post && props.visibile ?
           <>
-            <div className={postStyles['post-info']}>
+            <div className={postStyles['post-info']} onClick={(e)=>{e.stopPropagation()}}>
               <div>
                 <div className={postStyles['post-info-title-section']}>
                   <h1>{post.title}</h1>
                   <Image onClick={(e) => { e.stopPropagation(); props.hide() }} className={postStyles['close-icon']} src="/img/close.svg" width="50" height="50" alt="close-placeholder" />
                 </div>
-                {/* <h3>Made by: {post.author}</h3> */}
               </div>
               <p>{post.body}</p>
               <div className={styles['tags-container']}>
@@ -28,6 +27,7 @@ export default function InDepthPostComponent(props: { post: PostWithComments, hi
                   return <TagComponent tag={tag} key={index} />
                 })}
               </div>
+              <input className={styles['new-comment-input']} placeholder="add a new comment..."/>
               <CommentSection comments={post.child_comments} />
             </div>
           </>

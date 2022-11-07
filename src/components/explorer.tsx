@@ -4,12 +4,16 @@ import { Post, PostWithComments } from '../lib/types/fullPocketTypes';
 
 
 export interface IExplorerProps {
-  posts: Post[],
+  posts: PostWithComments[],
 }
 
 const Explorer: React.FunctionComponent<IExplorerProps> = props => {
   // This array needs to be populated with the API
-  return <>{props.posts.map((post, index) => <PostComponent post={post as PostWithComments} key={index} />)}</>
+  return <>
+    {
+      props.posts.map((post, index) => <PostComponent post={post} key={index} />)
+    }
+  </>
 }
 
 export default Explorer;
