@@ -4,6 +4,7 @@ import style from "../../../styles/dropdownSelect.module.scss"
 
 interface ITagSelectProps {
   tags: string[],
+  className?: string;
 }
 
 export default function TagSelect(props: Props<{ value: string; label: string }, true> & ITagSelectProps) {
@@ -11,5 +12,5 @@ export default function TagSelect(props: Props<{ value: string; label: string },
     value: tag, label: tag
   }));
 
-  return <Select isMulti {...props} closeMenuOnSelect={false} options={options} className={style.dropdown} />
+  return <Select isMulti {...props} closeMenuOnSelect={false} options={options} className={(props.className) ? `${style.dropdown} ${props.className}` : style.dropdown} />
 }
