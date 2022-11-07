@@ -7,6 +7,8 @@ import { strings } from '../src/localization/localization-create-post'
 import ButtonConfirm from '../src/components/general/button/button-confirm';
 import ButtonDanger from '../src/components/general/button/button-danger';
 import TagSelector from "../src/components/general/tagSelector"
+import CustomFooter from "../src/components/general/custom-footer"
+
 interface FormValues{
   title: string;
   postBody: string;
@@ -77,6 +79,7 @@ export default function CreatePost(){
           </Formik>
         }
       </main>
+      <CustomFooter></CustomFooter>
     </div>
   )
 }
